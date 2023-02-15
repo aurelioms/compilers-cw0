@@ -49,7 +49,7 @@ class A2I {
    a2i converts an ASCII string into an integer.  The empty string
 is converted to 0.  Signed and unsigned strings are handled.  The
 method aborts if the string does not represent an integer.  Very
-long strings of digits produce strange answers because of arithmetic
+long strings of digits produce strange answers because of arithmetic 
 overflow.
 
 *)
@@ -66,8 +66,8 @@ overflow.
 example, this method is written iteratively.
 *)
      a2i_aux(s : String) : Int {
-	(let int : Int <- 0 in
-           {
+	(let int : Int <- 0 in	
+           {	
                (let j : Int <- s.length() in
 	          (let i : Int <- 0 in
 		    while i < j loop
@@ -84,21 +84,21 @@ example, this method is written iteratively.
      };
 
 (*
-    i2a converts an integer to a string.  Positive and negative
-numbers are handled correctly.
+    i2a converts an integer to a string.  Positive and negative 
+numbers are handled correctly.  
 *)
     i2a(i : Int) : String {
-	if i = 0 then "0" else
+	if i = 0 then "0" else 
         if 0 < i then i2a_aux(i) else
-          "-".concat(i2a_aux(i * ~1))
+          "-".concat(i2a_aux(i * ~1)) 
         fi fi
     };
-
+	
 (*
     i2a_aux is an example using recursion.
-*)
+*)		
     i2a_aux(i : Int) : String {
-        if i = 0 then "" else
+        if i = 0 then "" else 
 	    (let next : Int <- i / 10 in
 		i2a_aux(next).concat(i2c(i - next * 10))
 	    )
